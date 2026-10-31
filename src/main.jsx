@@ -477,6 +477,12 @@ function App() {
           </div>
           <div className="status">{online ? '● Local y privado' : '● Sin conexión'}</div>
         </header>
+        {(cash < 0 || bank < 0) && (
+          <div className="alert">
+            Una cuenta tiene saldo negativo. Revisa sus movimientos o concilia tus saldos actuales
+            en Cuentas.
+          </div>
+        )}
         {error && (
           <div role="alert" className="alert error">
             {error}
